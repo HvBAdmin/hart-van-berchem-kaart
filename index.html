@@ -13,9 +13,7 @@ function visible(s){return(active==="alle"||s.cat===active)&&(!query||s.name.toL
 function render(){let a=shops.filter(visible);$("hvbCount").textContent=a.length;$("hvbList").innerHTML=a.map(s=>'<button class="hvb-card" data-id="'+s.id+'"><span class="hvb-icon">'+icons[s.cat]+'</span><span><strong>'+s.name+'</strong><small class="hvb-cat">'+labels[s.cat]+'</small><small>'+s.address+', 2600 Berchem</small></span></button>').join("");document.querySelectorAll(".hvb-card").forEach(b=>b.onclick=()=>focus(+b.dataset.id));markers.forEach((m,id)=>visible(shops[id])?m.addTo(map):map.removeLayer(m))}
 function focus(id){let m=markers.get(id);if(m){map.setView(m.getLatLng(),17);m.openPopup()}}
 function filters(){let cs=[...new Set(shops.map(s=>s.cat))];$("hvbFilters").innerHTML='<button class="hvb-filter active" data-cat="alle">Alle</button>'+cs.map(c=>'<button class="hvb-filter" data-cat="'+c+'">'+icons[c]+' '+labels[c]+'</button>').join("");document.querySelectorAll(".hvb-filter").forEach(b=>b.onclick=()=>{active=b.dataset.cat;document.querySelectorAll(".hvb-filter").forEach(x=>x.classList.toggle("active",x===b));render()})}
-const fixedFallback=[
-[51.1964,4.4212],[51.1972,4.4196],[51.1964,4.4212],[51.1960,4.4200],[51.1960,4.4201],[51.1966607,4.4225464],[51.1964,4.4212],[51.1964,4.4212],[51.197634,4.425411],[51.1964,4.4212],[51.1964,4.4212],[51.1960,4.4200],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1970,4.4190],[51.1960,4.4230],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1960,4.4200],[51.1964,4.4212],[51.1964,4.4212],[51.1960,4.4230],[51.1960,4.4200],[51.1964,4.4212],[51.1960,4.4200],[51.1960,4.4200],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1960,4.4190],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212]
-];
+const fixedFallback=[[51.198499,4.4273078],[51.1965173,4.4202697],[51.1998183,4.430548],[51.1957509,4.4182205],[51.1956097,4.4183815],[51.1966972,4.4224772],[51.1979964,4.4252908],[51.1995965,4.4298935],[51.196598,4.4260257],[51.1945138,4.4169867],[51.197593,4.4247383],[51.1961375,4.4178128],[51.1968182,4.4222921],[51.1980452,4.4260204],[51.1970468,4.4227347],[51.1969308,4.4224638],[51.1993965,4.4298398],[51.1959055,4.4192719],[51.1964837,4.4220883],[51.1967257,4.4221044],[51.1957946,4.419964],[51.1967325,4.4225442],[51.1968014,4.422673],[51.1997494,4.43032],[51.1994939,4.4304031],[51.1992452,4.4294482],[51.1985225,4.4267607],[51.1997091,4.4301805],[51.1972485,4.4237486],[51.1965106,4.4180596],[51.1981006,4.4256207],[51.1995797,4.4298278],[51.1961677,4.4223726],[51.1952231,4.4187731],[51.1991057,4.429062],[51.1963071,4.4183796],[51.1947482,4.4192467],[51.199025,4.4288018],[51.1987729,4.4281876],[51.196051,4.4209355],[51.195845,4.419449],[51.199546,4.4297192],[51.196761,4.4226113],[51.1994166,4.4299123],[51.1971006,4.4228607],[51.196561,4.4217396],[51.1973745,4.423534],[51.1983813,4.4269994],[51.1963661,4.4213909],[51.1957145,4.4207547],[51.196793,4.4222331],[51.197309,4.4233435],[51.196635,4.4223887],[51.1993544,4.4297218],[51.1968619,4.4223753],[51.1982704,4.4266507],[51.1975308,4.4245237],[51.1982956,4.4267446],[51.1957072,4.4196957],[51.1965913,4.4222814],[51.1958316,4.4201946],[51.1966908,4.4222243]];
 const addressFix={"Danzateljee":"Hogeweg 28","Cantaloop":"Onze-Lieve-Vrouwstraat 1","Apotheek DrieKoningen":"Grote Steenweg 99","Aqua service":"Grote Steenweg 109","Chay May Thai":"Grote Steenweg 83","Home Sint-Jozef":"Grote Steenweg 112","Jacobs Drukkerij":"Grote Steenweg 123","KBC":"Grote Steenweg 120","Koh.I.Noor":"Grote Steenweg 145"};
 function cacheKey(s){return "hvb-v3-official-"+s.id}
 function cachedPos(s){try{let v=localStorage.getItem(cacheKey(s));return v?JSON.parse(v):null}catch(e){return null}}
@@ -39,12 +37,7 @@ function geoOfficial(s){
   script.onerror=()=>done(null);document.head.appendChild(script);setTimeout(()=>done(null),8000);
  });
 }
-async function geo(s){
- let old=cachedPos(s);if(old)return old;
- let p=await geoOfficial(s);
- if(p){savePos(s,p);return p}
- return fixedFallback[s.id]||[51.1964,4.4212];
-}
+async function geo(s){ return fixedFallback[s.id]; }
 async function init(){
  filters();render();$("hvbSearch").oninput=e=>{query=e.target.value.trim().toLowerCase();render()};
  let i=0,done=0;
@@ -54,7 +47,7 @@ async function init(){
    let ic=L.divIcon({className:"",html:'<div class="hvb-pin"><span>'+icons[s.cat]+'</span></div>',iconSize:[34,34],iconAnchor:[17,34]}),
    route="https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent((addressFix[s.name]||s.address)+", 2600 Berchem, België"),
    m=L.marker(p,{icon:ic}).bindPopup('<div class="hvb-pop"><strong>'+s.name+'</strong><p>'+icons[s.cat]+' '+labels[s.cat]+'<br>'+(addressFix[s.name]||s.address)+', 2600 Berchem</p><a href="'+route+'" target="_blank" rel="noopener">Route →</a></div>').addTo(map);
-   markers.set(s.id,m);done++;$("hvbStatus").textContent="Officiële adreslocaties laden: "+done+"/"+shops.length;
+   markers.set(s.id,m);done++;$("hvbStatus").textContent="Vaste locaties laden: "+done+"/"+shops.length;
   }
  }
  await Promise.all(Array.from({length:5},worker));
