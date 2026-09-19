@@ -1,0 +1,575 @@
+[
+  {
+    "name": "Aari Thai",
+    "address": "Statiestraat 101",
+    "categories": [
+      "horeca"
+    ],
+    "lat": 51.198499,
+    "lng": 4.4273078
+  },
+  {
+    "name": "Albert Heijn",
+    "address": "Walemstraat 6",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.1965173,
+    "lng": 4.4202697
+  },
+  {
+    "name": "Apotheek Coppens",
+    "address": "Statiestraat 160",
+    "categories": [
+      "beauty"
+    ],
+    "lat": 51.1998183,
+    "lng": 4.430548
+  },
+  {
+    "name": "Apotheek DrieKoningen",
+    "address": "Grote Steenweg 99",
+    "categories": [
+      "beauty"
+    ],
+    "lat": 51.1957509,
+    "lng": 4.4182205
+  },
+  {
+    "name": "Aqua service",
+    "address": "Grote Steenweg 109",
+    "categories": [
+      "bloemen"
+    ],
+    "lat": 51.1956097,
+    "lng": 4.4183815
+  },
+  {
+    "name": "Boetiek 3B bvba",
+    "address": "Driekoningenstraat 69",
+    "categories": [
+      "kleding",
+      "accessoires",
+      "schoenen",
+      "geschenken"
+    ],
+    "lat": 51.1966972,
+    "lng": 4.4224772
+  },
+  {
+    "name": "Brel",
+    "address": "Statiestraat 46",
+    "categories": [
+      "horeca"
+    ],
+    "lat": 51.1979964,
+    "lng": 4.4252908
+  },
+  {
+    "name": "BV Salon Queen",
+    "address": "Statiestraat 142",
+    "categories": [
+      "beauty"
+    ],
+    "lat": 51.1995965,
+    "lng": 4.4298935
+  },
+  {
+    "name": "Café Tati",
+    "address": "Victor Jacobslei 69",
+    "categories": [
+      "horeca"
+    ],
+    "lat": 51.196598,
+    "lng": 4.4260257
+  },
+  {
+    "name": "Cantaloop",
+    "address": "Onze-Lieve-Vrouwstraat 1",
+    "categories": [
+      "horeca"
+    ],
+    "lat": 51.1945138,
+    "lng": 4.4169867
+  },
+  {
+    "name": "Carrefour Express",
+    "address": "Statiestraat 37",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.197593,
+    "lng": 4.4247383
+  },
+  {
+    "name": "Chay May Thai",
+    "address": "Grote Steenweg 83",
+    "categories": [
+      "beauty"
+    ],
+    "lat": 51.1961375,
+    "lng": 4.4178128
+  },
+  {
+    "name": "Choice Juwelen",
+    "address": "Driekoningenstraat 120",
+    "categories": [
+      "geschenken"
+    ],
+    "lat": 51.1968182,
+    "lng": 4.4222921
+  },
+  {
+    "name": "Çiğköftem Berchem",
+    "address": "Statiestraat 67",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.1980452,
+    "lng": 4.4260204
+  },
+  {
+    "name": "Colman leder",
+    "address": "Driekoningenstraat 134",
+    "categories": [
+      "diensten",
+      "accessoires"
+    ],
+    "lat": 51.1970468,
+    "lng": 4.4227347
+  },
+  {
+    "name": "Corso",
+    "address": "Driekoningenstraat 126",
+    "categories": [
+      "vrije tijd"
+    ],
+    "lat": 51.1969308,
+    "lng": 4.4224638
+  },
+  {
+    "name": "Dahmetriz & Chacha",
+    "address": "Statiestraat 163",
+    "categories": [
+      "beauty"
+    ],
+    "lat": 51.1993965,
+    "lng": 4.4298398
+  },
+  {
+    "name": "Danzateljee",
+    "address": "Hogeweg 28",
+    "categories": [
+      "vrije tijd",
+      "beauty"
+    ],
+    "lat": 51.1959055,
+    "lng": 4.4192719
+  },
+  {
+    "name": "Diamond Pizza",
+    "address": "Patriottenstraat 2",
+    "categories": [
+      "horeca"
+    ],
+    "lat": 51.1964837,
+    "lng": 4.4220883
+  },
+  {
+    "name": "Donmex Tex",
+    "address": "Driekoningenstraat 35",
+    "categories": [
+      "kleding"
+    ],
+    "lat": 51.1967257,
+    "lng": 4.4221044
+  },
+  {
+    "name": "Driekoningen Shoe",
+    "address": "Driekoningenstraat 17",
+    "categories": [
+      "schoenen"
+    ],
+    "lat": 51.1957946,
+    "lng": 4.419964
+  },
+  {
+    "name": "Fietsen Driss",
+    "address": "Driekoningenstraat 71",
+    "categories": [
+      "vrije tijd"
+    ],
+    "lat": 51.1967325,
+    "lng": 4.4225442
+  },
+  {
+    "name": "Gijbels",
+    "address": "Driekoningenstraat 75",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.1968014,
+    "lng": 4.422673
+  },
+  {
+    "name": "Gloei",
+    "address": "Statiestraat 154",
+    "categories": [
+      "geschenken"
+    ],
+    "lat": 51.1997494,
+    "lng": 4.43032
+  },
+  {
+    "name": "Goeiemorgen",
+    "address": "Statiestraat 169",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.1994939,
+    "lng": 4.4304031
+  },
+  {
+    "name": "Hairfusion Berchem",
+    "address": "Statiestraat 151",
+    "categories": [
+      "beauty"
+    ],
+    "lat": 51.1992452,
+    "lng": 4.4294482
+  },
+  {
+    "name": "Hakan CV",
+    "address": "Statiestraat 82",
+    "categories": [
+      "wonen"
+    ],
+    "lat": 51.1985225,
+    "lng": 4.4267607
+  },
+  {
+    "name": "Hawa Market",
+    "address": "Statiestraat 150",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.1997091,
+    "lng": 4.4301805
+  },
+  {
+    "name": "Helios",
+    "address": "Statiestraat 13",
+    "categories": [
+      "voeding",
+      "geschenken"
+    ],
+    "lat": 51.1972485,
+    "lng": 4.4237486
+  },
+  {
+    "name": "Home Sint-Jozef",
+    "address": "Grote Steenweg 112",
+    "categories": [
+      "diensten"
+    ],
+    "lat": 51.1965106,
+    "lng": 4.4180596
+  },
+  {
+    "name": "Host",
+    "address": "Statiestraat 56",
+    "categories": [
+      "kleding",
+      "geschenken"
+    ],
+    "lat": 51.1981006,
+    "lng": 4.4256207
+  },
+  {
+    "name": "Howdy",
+    "address": "Statiestraat 102",
+    "categories": [
+      "diensten"
+    ],
+    "lat": 51.1995797,
+    "lng": 4.4298278
+  },
+  {
+    "name": "Infinity Artwerps",
+    "address": "Patriottenstraat 14",
+    "categories": [
+      "diensten"
+    ],
+    "lat": 51.1961677,
+    "lng": 4.4223726
+  },
+  {
+    "name": "Jacobs Drukkerij",
+    "address": "Grote Steenweg 123",
+    "categories": [
+      "diensten"
+    ],
+    "lat": 51.1952231,
+    "lng": 4.4187731
+  },
+  {
+    "name": "Jorens",
+    "address": "Statiestraat 141",
+    "categories": [
+      "geschenken",
+      "wonen"
+    ],
+    "lat": 51.1991057,
+    "lng": 4.429062
+  },
+  {
+    "name": "KBC",
+    "address": "Grote Steenweg 120",
+    "categories": [
+      "diensten"
+    ],
+    "lat": 51.1963071,
+    "lng": 4.4183796
+  },
+  {
+    "name": "Koh.I.Noor",
+    "address": "Grote Steenweg 145",
+    "categories": [
+      "diensten"
+    ],
+    "lat": 51.1947482,
+    "lng": 4.4192467
+  },
+  {
+    "name": "Koncept K",
+    "address": "Statiestraat 135",
+    "categories": [
+      "kleding",
+      "accessoires"
+    ],
+    "lat": 51.199025,
+    "lng": 4.4288018
+  },
+  {
+    "name": "Kringwinkel Antwerpen",
+    "address": "Statiestraat 121",
+    "categories": [
+      "kleding",
+      "accessoires",
+      "wonen"
+    ],
+    "lat": 51.1987729,
+    "lng": 4.4281876
+  },
+  {
+    "name": "Kupuku Japans design",
+    "address": "Driekoningenstraat 33",
+    "categories": [
+      "geschenken"
+    ],
+    "lat": 51.196051,
+    "lng": 4.4209355
+  },
+  {
+    "name": "Lammens krantenwinkel",
+    "address": "Driekoningenstraat 16",
+    "categories": [
+      "vrije tijd",
+      "geschenken"
+    ],
+    "lat": 51.195845,
+    "lng": 4.419449
+  },
+  {
+    "name": "Maddy's Café",
+    "address": "Statiestraat 138",
+    "categories": [
+      "horeca"
+    ],
+    "lat": 51.199546,
+    "lng": 4.4297192
+  },
+  {
+    "name": "Mario doe het zelf",
+    "address": "Driekoningenstraat 73",
+    "categories": [
+      "wonen"
+    ],
+    "lat": 51.196761,
+    "lng": 4.4226113
+  },
+  {
+    "name": "Mokka Lisa",
+    "address": "Statiestraat 165",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.1994166,
+    "lng": 4.4299123
+  },
+  {
+    "name": "Ohlala Bowl",
+    "address": "Driekoningenstraat 138",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.1971006,
+    "lng": 4.4228607
+  },
+  {
+    "name": "Okalino Poké Bowl",
+    "address": "Driekoningenstraat 104",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.196561,
+    "lng": 4.4217396
+  },
+  {
+    "name": "Oxfam Wereldwinkel",
+    "address": "Statiestraat 14",
+    "categories": [
+      "wonen",
+      "geschenken"
+    ],
+    "lat": 51.1973745,
+    "lng": 4.423534
+  },
+  {
+    "name": "Paci",
+    "address": "Statiestraat 91",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.1983813,
+    "lng": 4.4269994
+  },
+  {
+    "name": "Panos",
+    "address": "Driekoningenstraat 94",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.1963661,
+    "lng": 4.4213909
+  },
+  {
+    "name": "Pasta rigoletto",
+    "address": "Willem van Laarstraat 11",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.1957145,
+    "lng": 4.4207547
+  },
+  {
+    "name": "Puur Natuur",
+    "address": "Driekoningenstraat 118",
+    "categories": [
+      "bloemen"
+    ],
+    "lat": 51.196793,
+    "lng": 4.4222331
+  },
+  {
+    "name": "Said Supermarkt",
+    "address": "Statiestraat 8",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.197309,
+    "lng": 4.4233435
+  },
+  {
+    "name": "Saypa Supermarkt",
+    "address": "Driekoningenstraat 65",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.196635,
+    "lng": 4.4223887
+  },
+  {
+    "name": "Shika",
+    "address": "Statiestraat 159",
+    "categories": [
+      "overige"
+    ],
+    "lat": 51.1993544,
+    "lng": 4.4297218
+  },
+  {
+    "name": "SmartFastFix",
+    "address": "Driekoningenstraat 122",
+    "categories": [
+      "diensten"
+    ],
+    "lat": 51.1968619,
+    "lng": 4.4223753
+  },
+  {
+    "name": "Solidaris",
+    "address": "Statiestraat 79",
+    "categories": [
+      "diensten"
+    ],
+    "lat": 51.1982704,
+    "lng": 4.4266507
+  },
+  {
+    "name": "Stan Lee",
+    "address": "Statiestraat 31",
+    "categories": [
+      "horeca"
+    ],
+    "lat": 51.1975308,
+    "lng": 4.4245237
+  },
+  {
+    "name": "Talent in de buurt",
+    "address": "Statiestraat 83",
+    "categories": [
+      "wonen",
+      "geschenken"
+    ],
+    "lat": 51.1982956,
+    "lng": 4.4267446
+  },
+  {
+    "name": "The Barn",
+    "address": "Driekoningenstraat 9",
+    "categories": [
+      "voeding"
+    ],
+    "lat": 51.1957072,
+    "lng": 4.4196957
+  },
+  {
+    "name": "Vos & Ooievaar",
+    "address": "Driekoningenstraat 61",
+    "categories": [
+      "kleding"
+    ],
+    "lat": 51.1965913,
+    "lng": 4.4222814
+  },
+  {
+    "name": "Zeeman",
+    "address": "Driekoningenstraat 21",
+    "categories": [
+      "kleding",
+      "wonen"
+    ],
+    "lat": 51.1958316,
+    "lng": 4.4201946
+  },
+  {
+    "name": "Zorgbedrijf Antwerpen",
+    "address": "Driekoningenstraat 1",
+    "categories": [
+      "diensten"
+    ],
+    "lat": 51.1966908,
+    "lng": 4.4222243
+  }
+]
