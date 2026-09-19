@@ -14,29 +14,50 @@ function render(){let a=shops.filter(visible);$("hvbCount").textContent=a.length
 function focus(id){let m=markers.get(id);if(m){map.setView(m.getLatLng(),17);m.openPopup()}}
 function filters(){let cs=[...new Set(shops.map(s=>s.cat))];$("hvbFilters").innerHTML='<button class="hvb-filter active" data-cat="alle">Alle</button>'+cs.map(c=>'<button class="hvb-filter" data-cat="'+c+'">'+icons[c]+' '+labels[c]+'</button>').join("");document.querySelectorAll(".hvb-filter").forEach(b=>b.onclick=()=>{active=b.dataset.cat;document.querySelectorAll(".hvb-filter").forEach(x=>x.classList.toggle("active",x===b));render()})}
 const fixedFallback=[
-[51.1913,4.4187],[51.1917,4.4200],[51.1932,4.4179],[51.1951,4.4190],[51.1952,4.4192],[51.1910,4.4175],[51.1917,4.4184],[51.1927,4.4181],[51.1887,4.4210],[51.1900,4.4158],[51.1914,4.4187],[51.1945,4.4190],[51.1925,4.4172],[51.1917,4.4188],[51.1927,4.4170],[51.1926,4.4171],[51.1932,4.4180],[51.1876,4.4240],[51.1904,4.4163],[51.1912,4.4175],[51.1907,4.4174],[51.1911,4.4174],[51.1912,4.4173],[51.1930,4.4180],[51.1934,4.4180],[51.1929,4.4180],[51.1919,4.4184],[51.1930,4.4181],[51.1907,4.4186],[51.1953,4.4193],[51.1919,4.4185],[51.1922,4.4184],[51.1905,4.4164],[51.1955,4.4194],[51.1928,4.4180],[51.1954,4.4193],[51.1958,4.4195],[51.1927,4.4180],[51.1925,4.4180],[51.1912,4.4176],[51.1907,4.4175],[51.1920,4.4185],[51.1926,4.4170],[51.1912,4.4174],[51.1933,4.4180],[51.1928,4.4170],[51.1922,4.4171],[51.1906,4.4187],[51.1919,4.4185],[51.1921,4.4172],[51.1879,4.4158],[51.1925,4.4171],[51.1905,4.4187],[51.1910,4.4175],[51.1931,4.4180],[51.1925,4.4172],[51.1918,4.4185],[51.1912,4.4187],[51.1919,4.4185],[51.1904,4.4175],[51.1909,4.4175],[51.1908,4.4175],[51.1903,4.4176]
+[51.1964,4.4212],[51.1972,4.4196],[51.1964,4.4212],[51.1960,4.4200],[51.1960,4.4201],[51.1966607,4.4225464],[51.1964,4.4212],[51.1964,4.4212],[51.197634,4.425411],[51.1964,4.4212],[51.1964,4.4212],[51.1960,4.4200],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1970,4.4190],[51.1960,4.4230],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1960,4.4200],[51.1964,4.4212],[51.1964,4.4212],[51.1960,4.4230],[51.1960,4.4200],[51.1964,4.4212],[51.1960,4.4200],[51.1960,4.4200],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1960,4.4190],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212],[51.1964,4.4212]
 ];
-const overrides={"Apotheek DrieKoningen":[51.19505,4.41902],"Aqua service":[51.19512,4.41912]};
-function cachedPos(s){try{let v=localStorage.getItem("hvb-pos-"+s.id);return v?JSON.parse(v):null}catch(e){return null}}
-function savePos(s,p){try{localStorage.setItem("hvb-pos-"+s.id,JSON.stringify(p))}catch(e){}}
+const addressFix={"Danzateljee":"Hogeweg 28","Cantaloop":"Onze-Lieve-Vrouwstraat 1","Apotheek DrieKoningen":"Grote Steenweg 99","Aqua service":"Grote Steenweg 109","Chay May Thai":"Grote Steenweg 83","Home Sint-Jozef":"Grote Steenweg 112","Jacobs Drukkerij":"Grote Steenweg 123","KBC":"Grote Steenweg 120","Koh.I.Noor":"Grote Steenweg 145"};
+function cacheKey(s){return "hvb-v3-official-"+s.id}
+function cachedPos(s){try{let v=localStorage.getItem(cacheKey(s));return v?JSON.parse(v):null}catch(e){return null}}
+function savePos(s,p){try{localStorage.setItem(cacheKey(s),JSON.stringify(p))}catch(e){}}
+function geoOfficial(s){
+ return new Promise(resolve=>{
+  let cb="hvbGeo_"+s.id+"_"+Date.now(),script=document.createElement("script"),finished=false;
+  const done=p=>{if(finished)return;finished=true;try{delete window[cb];script.remove()}catch(e){}resolve(p)};
+  window[cb]=data=>{
+   try{
+    let r=data&&data.LocationResult&&data.LocationResult[0],L=r&&r.Location;
+    if(L&&L.Lat_WGS84&&L.Lon_WGS84){
+      let p=[+L.Lat_WGS84,+L.Lon_WGS84];
+      if(p[0]>51.17&&p[0]<51.22&&p[1]>4.38&&p[1]<4.46)return done(p);
+    }
+   }catch(e){}
+   done(null);
+  };
+  let addr=(addressFix[s.name]||s.address)+", 2600 Berchem";
+  script.src="https://geo.api.vlaanderen.be/geolocation/v4/Location?q="+encodeURIComponent(addr)+"&c=1&callback="+cb;
+  script.onerror=()=>done(null);document.head.appendChild(script);setTimeout(()=>done(null),8000);
+ });
+}
 async function geo(s){
- if(overrides[s.name]) return overrides[s.name];
- let old=cachedPos(s); if(old) return old;
- let queries=[s.address+", 2600 Berchem, Antwerpen, België",s.address+", 2600 Antwerpen, België"];
- for(const a of queries){
-  try{let r=await fetch("https://photon.komoot.io/api/?limit=1&q="+encodeURIComponent(a));if(r.ok){let d=await r.json();if(d.features&&d.features[0]){let c=d.features[0].geometry.coordinates,p=[c[1],c[0]];if(p[0]>51.16&&p[0]<51.23&&p[1]>4.36&&p[1]<4.48){savePos(s,p);return p}}}}catch(e){}
- }
- return fixedFallback[s.id]||[51.191,4.419];
+ let old=cachedPos(s);if(old)return old;
+ let p=await geoOfficial(s);
+ if(p){savePos(s,p);return p}
+ return fixedFallback[s.id]||[51.1964,4.4212];
 }
 async function init(){
  filters();render();$("hvbSearch").oninput=e=>{query=e.target.value.trim().toLowerCase();render()};
- for(let i=0;i<shops.length;i++){
-  let s=shops[i],p=await geo(s);
-  let ic=L.divIcon({className:"",html:'<div class="hvb-pin"><span>'+icons[s.cat]+'</span></div>',iconSize:[34,34],iconAnchor:[17,34]}),
-  route="https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(s.address+", 2600 Berchem, België"),
-  m=L.marker(p,{icon:ic}).bindPopup('<div class="hvb-pop"><strong>'+s.name+'</strong><p>'+icons[s.cat]+' '+labels[s.cat]+'<br>'+s.address+', 2600 Berchem</p><a href="'+route+'" target="_blank" rel="noopener">Route →</a></div>').addTo(map);
-  markers.set(s.id,m);$("hvbStatus").textContent="Kaartlocaties laden: "+(i+1)+"/"+shops.length;
+ let i=0,done=0;
+ async function worker(){
+  while(i<shops.length){
+   let s=shops[i++],p=await geo(s);
+   let ic=L.divIcon({className:"",html:'<div class="hvb-pin"><span>'+icons[s.cat]+'</span></div>',iconSize:[34,34],iconAnchor:[17,34]}),
+   route="https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent((addressFix[s.name]||s.address)+", 2600 Berchem, België"),
+   m=L.marker(p,{icon:ic}).bindPopup('<div class="hvb-pop"><strong>'+s.name+'</strong><p>'+icons[s.cat]+' '+labels[s.cat]+'<br>'+(addressFix[s.name]||s.address)+', 2600 Berchem</p><a href="'+route+'" target="_blank" rel="noopener">Route →</a></div>').addTo(map);
+   markers.set(s.id,m);done++;$("hvbStatus").textContent="Officiële adreslocaties laden: "+done+"/"+shops.length;
+  }
  }
+ await Promise.all(Array.from({length:5},worker));
  render();$("hvbStatus").textContent=markers.size+" handelaars op de kaart.";
  if(markers.size)map.fitBounds(L.featureGroup([...markers.values()]).getBounds().pad(.08),{maxZoom:16});
 }
